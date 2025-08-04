@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        
+        <form id="resume-form">
+            <label for="name">Full Name: *</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email: *</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone: *</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="linkedin">LinkedIn Profile:</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+            
+            <label for="github">GitHub Profile:</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/yourusername">
+            
+            <label for="photo">Profile Photo:</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+            
+            <label for="summary">Professional Summary: *</label>
+            <textarea id="summary" name="summary" rows="4" required placeholder="Brief professional summary..."></textarea>
+            
+            <label for="achievements">Achievements:</label>
+            <textarea id="achievements" name="achievements" rows="4" placeholder="List your key achievements..."></textarea>
+            
+            <label for="languages">Languages:</label>
+            <textarea id="languages" name="languages" rows="3" placeholder="Languages you speak..."></textarea>
+            
+            <label for="education">Education: *</label>
+            <textarea id="education" name="education" rows="4" required placeholder="Your educational background..."></textarea>
+            
+            <label for="courses">Courses/Certifications:</label>
+            <textarea id="courses" name="courses" rows="4" placeholder="Relevant courses and certifications..."></textarea>
+            
+            <label for="projects">Projects:</label>
+            <textarea id="projects" name="projects" rows="6" placeholder="Enter your projects, one per line or separated by line breaks"></textarea>
+            
+            <label for="project-description">Project Descriptions:</label>
+            <textarea id="project-description" name="project-description" rows="8" placeholder="Describe each project in detail. Use line breaks to separate different projects"></textarea>
+            
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="4" placeholder="List your technical and soft skills..."></textarea>
+            
+            <button type="submit">Generate Resume</button>
+        </form>
+        
+        <div id="resume-output" style="display: none;">
+            <div class="buttons">
+                <button id="download-pdf" disabled>Download PDF</button>
+                <button id="print-resume" disabled>Print Resume</button>
+            </div>
+            <div id="resume-preview" class="resume-preview"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
